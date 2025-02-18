@@ -1,0 +1,29 @@
+.addbtn{
+    background-color: white;
+    height: 30px;
+    border-radius: 20px;
+    margin-left:10px ;
+    margin-top: 8px;
+    border: 2px solid black;
+    font-size: medium;
+}
+.addbtn:hover{
+    background-color: black;
+    color: white;
+}
+.plusdiv{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    margin-bottom:10px ;
+}
+.plusbtn{
+    border: 1px solid black;
+   padding: 5px;
+   width: 30px;
+   font-size: large;
+}
+.plusbtn:hover{
+    background-color: black;
+    color: white;
+}

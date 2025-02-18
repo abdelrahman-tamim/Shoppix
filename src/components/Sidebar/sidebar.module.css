@@ -1,0 +1,21 @@
+.light{
+    height: 100vh;
+    background-color: whitesmoke ;
+    width: 100px;
+    position: static;
+    right: 0;
+}
+.dark{
+    height: 100vh;
+    background-color: whitesmoke ;
+    width: 100px;
+    position: static;
+    right: 0;
+}
+.side{
+    display: flex ;
+    flex-direction: column;
+    padding-top: 20px;
+    font-size: large;
+    padding-left: 15px; padding-right: 15px;
+}

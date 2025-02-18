@@ -1,0 +1,43 @@
+.layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh; 
+}
+
+.mainContent {
+  display: flex;
+  
+ 
+}
+
+.sidebar {
+     background: whitesmoke;
+     padding: 10px;
+     height: 100vh;
+}
+
+
+.outlet {
+  background: #ffffff;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+footer {
+  background: #333;
+  color: white;
+  padding: 15px;
+  text-align: center;
+}
+.light {
+  background-color: #202020;
+  width: 100vw;
+  height: 40px;
+  position: relative;
+  bottom: 0;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: larger;
+}

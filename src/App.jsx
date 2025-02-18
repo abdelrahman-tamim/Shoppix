@@ -1,0 +1,58 @@
+import Layout from './components/Layout'
+import styles from './App.module.css'
+import { BrowserRouter, Route, Routes} from 'react-router-dom'
+import HomePage from './components/Pages/HomePage'
+import ContactPage from './components/Pages/ContactPage'
+import ProductsPage from './components/Pages/ProductsPage'
+import AccountPage from './components/Pages/AccountPage'
+import { useState } from 'react'
+import myContext from './components/Contexts'
+import { QueryClientProvider,QueryClient } from '@tanstack/react-query'
+import CartPage from './components/Pages/CartPage'
+import { Provider } from 'react-redux'
+import store from './components/store'
+import WishListPage from './components/Pages/WishListPage'
+
+
+
+
+
+
+
+function App() {
+
+  const [theme,settheme]=useState("light")
+  const [language,setlanguage]=useState("ltr")
+  
+  let firstQuery= new QueryClient()
+
+  return (
+    <Provider store={store}>
+    <QueryClientProvider client={firstQuery}>
+  <div dir={language}>
+  
+  <BrowserRouter>
+  <myContext.Provider value={{theme,settheme,language,setlanguage}}>
+  <Routes> 
+  <Route path="/" element={<Layout />}>
+  <Route path='/home'  element={<HomePage/>}></Route>
+  <Route path='/contact' element={<ContactPage/>}></Route>
+  <Route path='/products' element={<ProductsPage/>}></Route>
+  <Route path='/account' element={<AccountPage/>}></Route>
+  <Route path='/cart' element={<CartPage/>}></Route>
+  <Route path='/wishlist' element={<WishListPage/>}></Route>
+  </Route>
+  </Routes>
+  
+  
+  </myContext.Provider>
+  </BrowserRouter>
+  </div>
+  </QueryClientProvider>
+  </Provider>
+    
+  )
+}
+
+
+export default App

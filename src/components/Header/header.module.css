@@ -1,0 +1,78 @@
+.light{
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    background-color: whitesmoke;
+}
+.dark{
+    display: flex;
+    width: 100vw;
+    height: 100px;
+    background-color: pink;
+    
+}
+ul{
+    display: flex;
+    list-style: none;
+    gap: 40px;
+    font-size: 22px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    align-items: center;
+    
+
+}
+.themeb{
+    background-color: white;
+    height: 40px;
+    border-radius: 20px;
+    margin-left:0px ;
+    border: 2px solid black;
+}
+.lang{
+    background-color: white;
+    height: 40px;
+    border-radius: 20px;
+    border: 2px solid black;
+    
+}
+ul button:hover{
+    background-color: black;
+    color: white;
+    cursor: pointer;
+    
+}
+ul div {
+    margin-right: 200px;
+    margin-left: 30px;
+}
+li{
+    cursor: pointer;
+}
+a{
+    text-decoration: none;
+    color: black;
+}
+.active{
+    background-color: lightblue;
+    padding: 17px;
+   border-radius: 20px;
+}
+button{
+    padding-left: 10px;
+    padding-right: 10px;
+}
+.cart{
+    height: 50px;
+   
+}
+.wishlistimg{
+    height: 25px;
+    display: inline;
+    margin-left: 2px;
+}
+
+
+
+
+
+
