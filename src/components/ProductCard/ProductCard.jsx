@@ -2,6 +2,7 @@ import { useDispatch } from "react-redux"
 import styles from "./ProductCard.module.css"
 import { addtocart, removefromcart,plusone,minusone} from "../Slices/CartSlice"
 import { addToWishList,removeFromWishList  } from "../Slices/WishListSlice"
+import { Link } from "react-router-dom"
 
 let ProductCard=({item , inCartPage, inWishListPage})=>{
     let dispatch=useDispatch()
@@ -10,6 +11,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
         <div key={item.id} className="h-full">
           <a href="#" className="block h-full rounded-lg p-4 shadow-md shadow-indigo-100 border border-black flex flex-col">
             {/* Image with fixed size */}
+            <Link to={`/products/${item.id}`}> 
             <div className="h-56 w-full">
               <img 
                 src={item.image} 
@@ -17,6 +19,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
                 className="h-full w-full object-cover rounded-md" 
               />
             </div>
+            </Link>
     
             {/* Content */}
             <div className="mt-2 flex flex-col flex-grow">
@@ -27,7 +30,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
                 </div>
     
                 <div>
-                  <dt className="sr-only">{item.category}</dt>
+                 
                   <dd className="font-medium">{item.title}</dd>
                 </div>
               </dl>

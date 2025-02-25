@@ -6,6 +6,7 @@ import myContext from "../Contexts"
 import { useContext } from "react"
 import basket from "./basket.png"
 import wishlist from "./wishlist.png"
+import login from "./log.png"
 
 let Header=()=>{
     let {theme,settheme,setlanguage,language}=useContext(myContext)
@@ -19,14 +20,16 @@ let Header=()=>{
         <ul>
             <li><Link to="/"> <div><img className={styles.shoplogo} src={logo} alt="" /></div> </Link></li>
             
-        <li><NavLink className={ ({isActive})=>isActive&&styles.active} to="/home">Home</NavLink></li>
+     
         <li><NavLink className={({isActive})=>isActive&&styles.active} to="/products">Products</NavLink></li>
         <li><NavLink className={({isActive})=>isActive&&styles.active} to="/contact">Contact</NavLink></li>
-        <li><NavLink className={({isActive})=>isActive&&styles.active} to="/account">Account</NavLink></li>
         <li><NavLink className={({isActive})=>isActive&&styles.active} to="/wishlist">Wish List<img className={styles.wishlistimg} src={wishlist} alt="" /></NavLink> </li>
         <li><button onClick={()=>settheme(theme=="light"?"dark":"light")} className={styles.themeb}>Girly Theme</button></li>
         <li><button onClick={()=>setlanguage(language=="ltr"?"rtl":"ltr")} className={styles.lang}>Change language</button></li>
         <li><NavLink  to="/cart"> <img className={styles.cart} src={basket} alt="" /></NavLink></li>
+        <li><NavLink  to="/signin">Sign In<img className={styles.wishlistimg} src={login} alt="" /></NavLink> </li>
+        <li><NavLink  to="/login">Log In<img className={styles.wishlistimg} src={login} alt="" /></NavLink> </li>
+        <li><NavLink className={ ({isActive})=>isActive&&styles.active}  to="/addproduct">Add Product</NavLink> </li>
         </ul>
         
         </div>

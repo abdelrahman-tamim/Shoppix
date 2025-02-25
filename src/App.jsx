@@ -12,6 +12,13 @@ import CartPage from './components/Pages/CartPage'
 import { Provider } from 'react-redux'
 import store from './components/store'
 import WishListPage from './components/Pages/WishListPage'
+import SigninPage from './components/Pages/signinPage'
+import LoginPage from './components/Pages/LoginPage'
+import ProtectedRoute from './protectedRouts/protectedRoute'
+import ProductDetails from './components/Pages/ProductDetails'
+import AddProductPage from './components/Pages/AddProductPage'
+
+
 
 
 
@@ -36,11 +43,15 @@ function App() {
   <Routes> 
   <Route path="/" element={<Layout />}>
   <Route path='/home'  element={<HomePage/>}></Route>
-  <Route path='/contact' element={<ContactPage/>}></Route>
+  <Route path='/contact' element={<ProtectedRoute><ContactPage/></ProtectedRoute>}></Route>
   <Route path='/products' element={<ProductsPage/>}></Route>
-  <Route path='/account' element={<AccountPage/>}></Route>
+  <Route path='/account' element={  <AccountPage/> }></Route>
   <Route path='/cart' element={<CartPage/>}></Route>
   <Route path='/wishlist' element={<WishListPage/>}></Route>
+  <Route path='/signin' element={<SigninPage/>}></Route>
+  <Route path='/login' element={<LoginPage/>}></Route>
+  <Route path='/products/:id' element={<ProductDetails/>}></Route>
+  <Route path='/addproduct' element={<AddProductPage/>}></Route>
   </Route>
   </Routes>
   
