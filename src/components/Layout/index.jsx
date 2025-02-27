@@ -2,7 +2,7 @@ import Header from "../Header"
 import Fotter from "../Fotter"
 import SideBar from "../Sidebar"
 import { Outlet } from "react-router-dom"
-import styles from "./layout.module.css"
+import styles from "./Layout.module.css"
 
 
 const Layout=()=>{
