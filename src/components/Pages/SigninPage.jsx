@@ -16,7 +16,7 @@ export default function signinPage() {
   
 
 
-/*  const onSubmit= async (data)=>{
+ const onSubmit= async (data)=>{
    try{
     const response=await axiosInstance.post("http://localhost:3000/users",{
      Email:data.Email,
@@ -29,7 +29,7 @@ export default function signinPage() {
   } 
 
     
- } */
+ }
 
   return (
     <div className={styles.logindiv}>
