@@ -9,7 +9,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
     return(
         
         <div key={item.id} className="h-full">
-          <a href="#" className="block h-full rounded-lg p-4 shadow-md shadow-indigo-100 border border-black flex flex-col">
+          <a  className="block h-full rounded-lg p-4 shadow-md shadow-indigo-100 border border-black flex flex-col">
             {/* Image with fixed size */}
             <Link to={`/products/${item.id}`}> 
             <div className="h-56 w-full">
@@ -49,7 +49,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
                 </div>
               </div>
               {inCartPage?<button onClick={()=>dispatch(removefromcart(item))}className={styles.addbtn}>Remove From cart</button>
-              :<button onClick={()=>dispatch(addtocart(item))}className={styles.addbtn}>Add To cart</button>}
+              :<button onClick={()=>dispatch(addtocart(item))} className={styles.addbtn}>Add To cart</button>}
 
               {inWishListPage?<button onClick={()=>dispatch(removeFromWishList(item))} className={styles.addbtn}>Remove From WishList</button>:<button onClick={()=>dispatch(addToWishList(item))} className={styles.addbtn}>Add to WishList</button>}
              
