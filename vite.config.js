@@ -13,7 +13,13 @@ export default defineConfig({
         assetFileNames: 'assets/[name].[ext]'
       }
     }
+  },
+  server: {
+    headers: {
+      'Cache-Control': 'no-cache',
+    },
   }
 }
+
 )
 
