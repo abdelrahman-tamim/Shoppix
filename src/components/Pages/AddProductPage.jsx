@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { useSelector } from "react-redux";
 import db from "../../db.json"
+import axiosInstance from "../../axiosInstance.js"
 
 
 const AddProductPage = () => {
@@ -15,7 +16,7 @@ const AddProductPage = () => {
     let prd=useSelector((state)=>state.prouducts)
   
     const onsubmit=async(data)=>{
-        let response=await axios.post("http://localhost:3000/prouducts", {
+        let response=await axiosInstance.post("/prouducts", {
             id:db?.products?.length,
             title:data.title,
             price:data.price,

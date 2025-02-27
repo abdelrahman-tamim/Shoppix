@@ -10,7 +10,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
         
         <div key={item.id} className="h-full">
           <a  className="block h-full rounded-lg p-4 shadow-md shadow-indigo-100 border border-black flex flex-col">
-            {/* Image with fixed size */}
+         
             <Link to={`/products/${item.id}`}> 
             <div className="h-56 w-full">
               <img 
@@ -21,7 +21,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
             </div>
             </Link>
     
-            {/* Content */}
+          
             <div className="mt-2 flex flex-col flex-grow">
               <dl>
                 <div>
@@ -35,7 +35,7 @@ let ProductCard=({item , inCartPage, inWishListPage})=>{
                 </div>
               </dl>
     
-              {/* Footer */}
+           
               <div className="mt-auto flex items-center gap-2 text-xs">
                 <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-0">
                   <p className="text-gray-500">Rate:</p>
