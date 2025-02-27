@@ -9,10 +9,8 @@ let ProtectedRoute=({children})=>{
     const navigate=useNavigate()
     useEffect(()=>{
         if(!user){
-          
             navigate("/login")
-        }
-            
+        } 
     },[user])
 
     return children

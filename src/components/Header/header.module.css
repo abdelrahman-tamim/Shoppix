@@ -1,82 +1,138 @@
-.light{
+.light {
     display: flex;
     width: 100vw;
     height: 100px;
     background-color: whitesmoke;
 }
-.dark{
+
+.dark {
     display: flex;
     width: 100vw;
     height: 100px;
     background-color: pink;
-    
-}
-ul{
-    display: flex;
-    list-style: none;
-    gap: 30px;
-    font-size: 22px;
-    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
-    align-items: center;
-    
 
 }
-.themeb{
+
+.headerul {
+    display: flex;
+    list-style: none;
+    font-size: 19px;
+    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.themeb {
     background-color: white;
     height: 40px;
     border-radius: 20px;
-    margin-left:0px ;
-    border: 2px solid black;
+    margin-left: 0px;
+    border: 3px solid pink;
 }
-.lang{
+
+.lang {
     background-color: white;
     height: 40px;
     border-radius: 20px;
     border: 2px solid black;
-    
+
 }
-ul button:hover{
+
+ul button:hover {
     background-color: black;
     color: white;
     cursor: pointer;
-    
+
 }
+
 ul div {
     margin-right: 0px;
-    margin-left:50px;
+    margin-left: 50px;
 }
-li{
+
+li {
     cursor: pointer;
 }
-a{
+
+a {
     text-decoration: none;
     color: black;
 }
-.active{
-    background-color: lightblue;
+
+.active {
+    background-color: #FFCABF;
     padding: 17px;
-   border-radius: 20px;
+    border-radius: 10px;
 }
-button{
+
+button {
     padding-left: 10px;
     padding-right: 10px;
 }
-.cart{
-    height: 50px;
-   
+
+.cart {
+    height: 30px;
+
 }
-.wishlistimg{
+
+.wishlistimg {
     height: 25px;
     display: inline;
     margin-left: 2px;
 }
-.shoplogo{
-    margin-right: 30px;
-    height: 30px;
+
+.shoplogo {
+    margin-right: 230px;
+    height: 25px;
+    margin-left: 50px;
 }
+.shoplogo img{
+    height: 27px;
+    image-rendering: crisp-edges;
+
+}
+.sec2{
+    display: flex;
+    gap: 25px;
+    margin-left: 50px;
+    margin-right: 80px;
 
 
-
-
-
-
+}
+.sec3{
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+.logo{
+   display: flex;
+}
+.firstBar{
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    height: 35px;
+    background-color: #FFCABF;
+    padding: 5px;
+    font-size: 17px;
+}
+.firstBar img{
+    height: 25px;
+}
+.cartdiv{
+    position: relative;
+}
+.cartNum{
+    position: absolute;
+    font-size: 16px;
+    background-color: #ED5A39;
+    padding: 5px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+   bottom: 25px;
+   right: 20px;
+}

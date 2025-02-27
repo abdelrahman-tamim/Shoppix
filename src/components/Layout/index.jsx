@@ -7,21 +7,19 @@ import styles from "./layout.module.css"
 
 const Layout=()=>{
     return(
-        <>
-        <Header />
+      
+      <>
         <div className={styles.layout}>
-        <div className={styles.mainContent}>
-          <aside className={styles.sidebar}>
-            <SideBar />
-          </aside>
-          <main className={styles.outlet}>
-            <Outlet />
-          </main>
-        </div>
+        <Header />
+      <div className={styles.mainContent}>
+        <Outlet />
+        </div >
         <Fotter />
         </div>
-     
         </>
+     /*    { <aside className={styles.sidebar}>
+            <SideBar />
+          </aside> } */
      
     )
 }

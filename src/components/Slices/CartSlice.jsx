@@ -36,12 +36,11 @@ let cartSlice=createSlice({
             if(item.quantity<1){
                 state.value=state.value.filter((item)=>(item.id !=action.payload.id))
             }
-            if(state.totalprice<0){
+            if(state.value.length<1){
                 state.totalprice=0
             }else{
-                 state.totalprice-=action.payload.price
+                 state.totalprice=Number(state.totalprice-action.payload.price)
             }
-            
               if(state.value.length==0){
                 state.totalprice=0;
                 state.totalquantity=0;

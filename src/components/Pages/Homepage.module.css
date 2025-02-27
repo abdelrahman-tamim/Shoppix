@@ -1,0 +1,21 @@
+.banner {
+    width: 100%;
+}
+
+.prods {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 50px;
+    font-weight: 100;
+}
+
+.line {
+    height: 2px;
+    display: flex;
+    width: 350px;
+    justify-self: center;
+    color: black;
+    background-color: black;
+}

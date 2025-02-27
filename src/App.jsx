@@ -40,8 +40,10 @@ function App() {
   
   <BrowserRouter>
   <myContext.Provider value={{theme,settheme,language,setlanguage}}>
+{/*   <Layout > */}
   <Routes> 
-  <Route path="/" element={<Layout />}>
+    <Route element={ <Layout />}>
+  <Route path='/'  element={<HomePage/>}></Route>
   <Route path='/home'  element={<HomePage/>}></Route>
   <Route path='/contact' element={<ProtectedRoute><ContactPage/></ProtectedRoute>}></Route>
   <Route path='/products' element={<ProductsPage/>}></Route>
@@ -54,6 +56,8 @@ function App() {
   <Route path='/addproduct' element={<AddProductPage/>}></Route>
   </Route>
   </Routes>
+{/*   </Layout > */}
+
   
   
   </myContext.Provider>
