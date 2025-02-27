@@ -7,7 +7,7 @@ import { useContext } from "react"
 import basket from "./basket.png"
 import wishlist from "./wishlist.png"
 import login from "./log.png"
-import barIcon from "./icon.png"
+import barIcon from "./Icon.png"
 import { useSelector } from "react-redux"
 
 let Header=()=>{
