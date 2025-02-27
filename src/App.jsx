@@ -14,7 +14,7 @@ import store from './components/store'
 import WishListPage from './components/Pages/WishListPage'
 import SigninPage from './components/Pages/SigninPage'
 import LoginPage from './components/Pages/LoginPage'
-import ProtectedRoute from './protectedRouts/protectedRoute'
+import ProtectedRoute from './protectedRouts/ProtectedRoute'
 import ProductDetails from './components/Pages/ProductDetails'
 import AddProductPage from './components/Pages/AddProductPage'
 
