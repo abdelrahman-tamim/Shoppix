@@ -15,7 +15,7 @@ export default function LoginPage() {
    const {register,handleSubmit,formState:{errors},reset}=useForm()
    
    const onSubmit= async(user)=>{
-      let response=await axiosInstance.get(`http://localhost:3000/users?Email=${user.Email}`)
+      let response=await axiosInstance.get(`/users?Email=${user.Email}`)
       console.log(response)
       if(response.data.length==0){
         console.log("invalid user")

@@ -3,7 +3,7 @@ import axios from "axios";
 import axiosInstance from "../../axiosInstance";
 
 const fetchAllProducts=createAsyncThunk("products/getall",async()=>{
-  let response=await axiosInstance.get("http://localhost:3000/prouducts")
+  let response=await axiosInstance.get("/prouducts")
   return response.data
 })
 

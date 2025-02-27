@@ -18,7 +18,7 @@ export default function signinPage() {
 
  const onSubmit= async (data)=>{
    try{
-    const response=await axiosInstance.post("http://localhost:3000/users",{
+    const response=await axiosInstance.post("/users",{
      Email:data.Email,
      Password:data.Password
     })
