@@ -95,7 +95,7 @@ button {
 .sec2{
     display: flex;
     gap: 25px;
-    margin-left: 50px;
+    margin-left: 20px;
     margin-right: 80px;
 
 
@@ -135,4 +135,9 @@ button {
     align-items: center;
    bottom: 25px;
    right: 20px;
+}
+.addimg {
+    height: 28px;
+    display: inline;
+    margin-left: 2px;
 }

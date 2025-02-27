@@ -9,6 +9,7 @@ import wishlist from "./wishlist.png"
 import login from "./log.png"
 import barIcon from "./Icon.png"
 import { useSelector } from "react-redux"
+import add from "./add.webp"
 
 let Header=()=>{
     let {theme,settheme,setlanguage,language}=useContext(myContext)
@@ -34,9 +35,10 @@ let Header=()=>{
         <li><button onClick={()=>settheme(theme=="light"?"dark":"light")} className={styles.themeb}>Girly</button></li>
         <li><button onClick={()=>setlanguage(language=="ltr"?"rtl":"ltr")} className={styles.lang}>{language=="ltr"?<span>Eng</span>:<span>Ar</span>}</button></li>
         <li><NavLink  to="/cart"><div className={styles.cartdiv}> <img className={styles.cart} src={basket} alt="" /><span className={styles.cartNum}>{numberofItems}</span></div></NavLink></li>
+        <li><NavLink  to="/addproduct"><img className={styles.addimg} src={add} alt="" /></NavLink> </li>
         <li><NavLink  to="/signin">Sign In<img className={styles.wishlistimg} src={login} alt="" /></NavLink> </li>
         <li><NavLink  to="/login">Log In<img className={styles.wishlistimg} src={login} alt="" /></NavLink> </li>
-        {/* <li><NavLink className={ ({isActive})=>isActive&&styles.active}  to="/addproduct">Add Product</NavLink> </li> */}
+        
         </div>
         </ul>
         

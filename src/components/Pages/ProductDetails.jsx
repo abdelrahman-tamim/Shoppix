@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react"
 import { useParams } from "react-router-dom"
-import axios from "axios"
+import axiosInstance from "../../axiosInstance"
 
 
 let ProductDetails=()=>{
@@ -13,7 +13,7 @@ let ProductDetails=()=>{
     useEffect(()=>{
         try {
             let getproduct=async()=>{
-                let response= await axios.get(`http://localhost:3000/prouducts/${id}`)
+                let response= await axiosInstance.get(`/prouducts/${id}`)
                setProduct(response.data) 
             }
             getproduct()
