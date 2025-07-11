@@ -2,18 +2,37 @@
     display: flex;
     flex: 1;
     align-items: center;
-    margin-left: 500px;
-    margin-top: 100px;
+    justify-content: center;
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
 }
 
 .logform {
     display: flex;
     flex-direction: column;
     justify-content: center;
+    width: 100%;
+    max-width: 400px;
 }
 
 .logbtn {
     background-color: lightblue;
     font-size: large;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+@media (max-width: 600px) {
+  .logindiv {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .logform {
+    width: 90%;
+    max-width: 95vw;
+    padding: 1rem;
+  }
 }

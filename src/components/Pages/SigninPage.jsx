@@ -1,10 +1,8 @@
 import { useRef, useState } from "react";
-import styles from "./loginpage.module.css"
+import styles from "./loginpage.module.css";
 import axios from "axios";
-import { useForm } from "react-hook-form"
+import { useForm } from "react-hook-form";
 import axiosInstance from "../../axiosInstance";
-
-
 
 export default function signinPage() {
   const {
@@ -12,62 +10,62 @@ export default function signinPage() {
     handleSubmit,
     reset,
     formState: { errors },
-  } = useForm()
-  
+  } = useForm();
 
-
- const onSubmit= async (data)=>{
-   try{
-    const response=await axiosInstance.post("/users",{
-     Email:data.Email,
-     Password:data.Password
-    })
-    alert("You Have Succsufully Signed in");
-    reset();
-  }catch(err){
-    setError(err)
-  } 
-
-    
- }
+  const onSubmit = async (data) => {
+    try {
+      const response = await axiosInstance.post("/users", {
+        Email: data.Email,
+        Password: data.Password,
+      });
+      alert("You Have Succsufully Signed in");
+      reset();
+    } catch (err) {
+      console.error(err);
+    }
+  };
 
   return (
     <div className={styles.logindiv}>
-      <form onSubmit={handleSubmit(onSubmit)} className={`bg-white p-6 rounded-lg shadow-md w-96 ${styles.logform}` }>
+      <form
+        onSubmit={handleSubmit(onSubmit)}
+        className={`bg-white p-6 rounded-lg shadow-md w-96 ${styles.logform}`}
+      >
         <h2 className="text-2xl font-bold mb-4 text-center">Sign In</h2>
-    
+
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Email</label>
+          <label className="block text-sm font-medium text-gray-700">
+            Email
+          </label>
           <input
             type="email"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-           {...register("Email",{
-            required:"You must right A valid E-Mail",
-            minLength:{value:5,message:"Email should be more than 5 charchters"}
-
-          }
-          )}
-          
+            {...register("Email", {
+              required: "You must right A valid E-Mail",
+              minLength: {
+                value: 5,
+                message: "Email should be more than 5 charchters",
+              },
+            })}
           />
-          {errors.Email&&(
-            <p>{errors.Email.message}</p>
-          )}
+          {errors.Email && <p>{errors.Email.message}</p>}
         </div>
         <div className="mb-4">
-          <label className="block text-sm font-medium text-gray-700">Password</label>
+          <label className="block text-sm font-medium text-gray-700">
+            Password
+          </label>
           <input
             type="password"
             className="mt-1 block w-full p-2 border border-gray-300 rounded-lg"
-          {...register("Password",{
-            required:"Password is requierd",
-            minLength:{value:5,message:"Password Must be Atleast 5 charachters"}
-          }
-         
-          )}
+            {...register("Password", {
+              required: "Password is requierd",
+              minLength: {
+                value: 5,
+                message: "Password Must be Atleast 5 charachters",
+              },
+            })}
           />
-           {errors.Password && (
-            <p>{errors.Password.message}</p>
-          )}
+          {errors.Password && <p>{errors.Password.message}</p>}
         </div>
         <button
           type="submit"
