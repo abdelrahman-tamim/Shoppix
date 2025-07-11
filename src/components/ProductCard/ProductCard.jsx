@@ -12,91 +12,84 @@ import { Link } from "react-router-dom";
 let ProductCard = ({ item, inCartPage, inWishListPage }) => {
   let dispatch = useDispatch();
   return (
-    <div key={item.id} className="h-full">
-      <a className="block h-full rounded-lg p-4 shadow-md shadow-indigo-100 border border-black flex flex-col">
-        <Link to={`/products/${item.id}`}>
-          <div className="h-56 w-full">
-            <img
-              src={item.image}
-              alt={item.title}
-              className="h-full w-full object-contain rounded-md"
-            />
-          </div>
+    <div className={styles.cardWrapper}>
+      <div className={styles.card}>
+        <Link to={`/products/${item.id}`} className={styles.imageContainer}>
+          <img
+            src={item.image}
+            alt={item.title}
+            className={styles.productImage}
+          />
         </Link>
 
-        <div className="mt-2 flex flex-col flex-grow">
-          <dl>
-            <div>
-              <dt className="sr-only">Price</dt>
-              <dd className="text-sm text-gray-500">{item.price}$</dd>
-            </div>
+        <div className={styles.contentContainer}>
+          <div className={styles.priceTag}>${item.price}</div>
+          <h3 className={styles.productTitle}>{item.title}</h3>
 
-            <div>
-              <dd className="font-medium">{item.title}</dd>
+          <div className={styles.statsContainer}>
+            <div className={styles.rating}>
+              <span className={styles.rateValue}>{item.rating.rate}</span>
+              <span className={styles.rateLabel}>Rating</span>
             </div>
-          </dl>
-
-          <div className="mt-auto flex items-center gap-2 text-xs">
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-0">
-              <p className="text-gray-500">Rate:</p>
-              <p className="font-medium"> {item.rating.rate}</p>
-            </div>
-            <div className="sm:inline-flex sm:shrink-0 sm:items-center sm:gap-2">
-              <p className="text-gray-500"> Stock:</p>
-              <p className="font-medium">{item.rating.count} item</p>
+            <div className={styles.stock}>
+              <span className={styles.stockValue}>{item.rating.count}</span>
+              <span className={styles.stockLabel}>In Stock</span>
             </div>
           </div>
-          {inCartPage ? (
-            <button
-              onClick={() => dispatch(removefromcart(item))}
-              className={styles.addbtn}
-            >
-              Remove From cart
-            </button>
-          ) : (
-            <button
-              onClick={() => dispatch(addtocart(item))}
-              className={styles.addbtn}
-            >
-              Add To cart
-            </button>
-          )}
 
-          {inWishListPage ? (
-            <button
-              onClick={() => dispatch(removeFromWishList(item))}
-              className={styles.addbtn}
-            >
-              Remove From WishList
-            </button>
-          ) : (
-            <button
-              onClick={() => dispatch(addToWishList(item))}
-              className={styles.addbtn}
-            >
-              Add to WishList
-            </button>
-          )}
+          <div className={styles.actions}>
+            {inCartPage ? (
+              <button
+                onClick={() => dispatch(removefromcart(item))}
+                className={`${styles.actionButton} ${styles.removeButton}`}
+              >
+                Remove From Cart
+              </button>
+            ) : (
+              <button
+                onClick={() => dispatch(addtocart(item))}
+                className={`${styles.actionButton} ${styles.addButton}`}
+              >
+                Add To Cart
+              </button>
+            )}
 
-          {inCartPage && (
-            <div className={styles.plusdiv}>
+            {inWishListPage ? (
               <button
-                onClick={() => dispatch(plusone(item))}
-                className={styles.plusbtn}
+                onClick={() => dispatch(removeFromWishList(item))}
+                className={`${styles.actionButton} ${styles.removeButton}`}
               >
-                +
+                Remove From WishList
               </button>
-              {item.quantity}
+            ) : (
               <button
-                onClick={() => dispatch(minusone(item))}
-                className={styles.plusbtn}
+                onClick={() => dispatch(addToWishList(item))}
+                className={`${styles.actionButton} ${styles.wishlistButton}`}
               >
-                -
+                Add to WishList
               </button>
-            </div>
-          )}
+            )}
+
+            {inCartPage && (
+              <div className={styles.quantityControl}>
+                <button
+                  onClick={() => dispatch(minusone(item))}
+                  className={styles.quantityButton}
+                >
+                  −
+                </button>
+                <span className={styles.quantity}>{item.quantity}</span>
+                <button
+                  onClick={() => dispatch(plusone(item))}
+                  className={styles.quantityButton}
+                >
+                  +
+                </button>
+              </div>
+            )}
+          </div>
         </div>
-      </a>
+      </div>
     </div>
   );
 };
